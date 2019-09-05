@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" />
+    <link rel="stylesheet" href="main.css" />
+    <title>TV Show Database</title>
+
+</head>
+
+<body>
+    <h1 class="main-heading">Welcome to the TV show database app!</h1>
+    <div class="search-container">
+        <div class="show-search">
+            <form onsubmit="searchShow(e); return false">
+                <label for="tvShowSearch">Search for a show: </label>
+                <input type="text" id="tvShowSearch" placeholder="Show name">
+                <button type="search" id="searchButton">Search</button>
+            </form>
+        </div>
+        <div class="popular-shows-table">
+            <h1>Top 20 shows of all time: </h1>
+            <ol class="popular-shows-list">
+            </ol>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
