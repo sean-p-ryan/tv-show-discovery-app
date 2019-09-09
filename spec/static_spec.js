@@ -4,11 +4,26 @@ const base = "http://localhost:3000/";
 
 describe("routes : static", () => {
 
+    // Tests whether homepage is successfully served
     describe("GET /", () => {
 
         it("should return status code 200", (done) => {
 
             request.get(base, (err, res, body) => {
+                expect(res.statusCode).toBe(200);
+
+                done();
+            });
+        });
+
+    });
+
+    // Tests whether show page is successfully served
+    describe("GET /tv/:showId", () => {
+
+        it("should return status code 200", (done) => {
+
+            request.get(base + 'tv/123', (err, res, body) => {
                 expect(res.statusCode).toBe(200);
 
                 done();
