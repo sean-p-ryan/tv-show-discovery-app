@@ -20,12 +20,11 @@ describe("routes : static", () => {
     });
 
     // Tests whether show page is successfully served
-    describe("GET /tv/:showId", () => {
+    describe("GET /tv/showId", () => {
 
         it("should return status code 200", (done) => {
             request.get(base + 'tv/123', (err, res, body) => {
                 expect(res.statusCode).toBe(200);
-
                 done();
             });
         });
@@ -35,14 +34,38 @@ describe("routes : static", () => {
     // Endpoint to get list of popoular shows
     describe("GET /tv/popular", () => {
 
-        it("API Response should be valid JSON", function(done) {
-            request.get(base + 'tv/popular', function(error, response, body) {
-                expect(() => {
-                    JSON.parse(body);
-                }).not.toThrow();
-                done();
-            });
-        });
+        let testData = {};
 
+        beforeEach(done => {
+            fetch(base + 'tv/popular')
+                .then(response => response.json())
+                .then(data => {
+                    testData = data;
+                    done();
+                })
+        })
+
+        it("should get data frompopular shows endpoint", () => {            
+            expect(testData).toBeDefined();
+        })
+    });
+
+    //Endpoint to get specific show's data
+    describe("GET /tv/:tv_id", () => {
+
+        let testData = {};
+
+        beforeEach(done => {
+            fetch(base + 'tv/:tv_id')
+                .then(response => response.json())
+                .then(data => {
+                    testData = data;
+                    done();
+                })
+        })
+
+        it("should get data frompopular shows endpoint", () => {            
+            expect(testData).toBeDefined();
+        })
     });
 });
