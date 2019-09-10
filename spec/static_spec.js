@@ -40,32 +40,38 @@ describe("routes : static", () => {
             fetch(base + 'tv/popular')
                 .then(response => response.json())
                 .then(data => {
-                    testData = data;
+                    testData = data.results;
                     done();
                 })
         })
 
-        it("should get data frompopular shows endpoint", () => {            
+        it("should get data from popular shows endpoint", () => {            
             expect(testData).toBeDefined();
+        })
+        it("should contain the name 'Desmontando la Historia'", () => {            
+            expect(testData[0].original_name).toContain('Desmontando la Historia');           
         })
     });
 
-    //Endpoint to get specific show's data
-    describe("GET /tv/:tv_id", () => {
+    //Endpoint to get specific show's data (Grey's Anatomy)
+    describe("GET /show/data/:showId", () => {
 
-        let testData = {};
+        let testShow = {};
 
         beforeEach(done => {
-            fetch(base + 'tv/:tv_id')
+            fetch(base + 'show/data/1416')
                 .then(response => response.json())
                 .then(data => {
-                    testData = data;
+                    testShow = data;
                     done();
                 })
         })
 
-        it("should get data frompopular shows endpoint", () => {            
-            expect(testData).toBeDefined();
+        it("should should retrieve data from the server", () => {            
+            expect(testShow).toBeDefined();            
+        })
+        it("should should contain data for Grey's Anatomy", () => {            
+            expect(testShow.original_name).toContain("Grey\'s Anatomy");            
         })
     });
 });
