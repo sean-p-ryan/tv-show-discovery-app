@@ -12,21 +12,28 @@
 </head>
 
 <body>
-    <h1 class="main-heading">Welcome to the TV show database app!</h1>
-    <div class="search-container">
+    <div class="main-container">
+    
+    <!-- <div class="container"> -->
+
+        <h1 class="main-heading">Welcome to the TV show database app!</h1>
         <div class="show-search">
             <form onsubmit="searchShow(e); return false">
                 <label for="tvShowSearch">Search for a show: </label>
                 <input type="text" id="tvShowSearch" placeholder="Show name">
                 <button type="search" id="searchButton">Search</button>
             </form>
-        </div>
+        </div>        
+        <!-- <img src="./assets/images/homepage_background_image.jpg" alt="1950s family watching television" class="homepage-image"> -->
+        <div class="image-container"></div>
         <div class="popular-shows-table">
             <h1>Top 20 shows of all time: </h1>
             <ol class="popular-shows-list">
             </ol>
         </div>
-    </div>
+    <!-- </div> -->
+</div>
+    
     <script src="js/index.js"></script>
 </body>
 
