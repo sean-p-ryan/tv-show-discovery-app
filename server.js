@@ -17,17 +17,17 @@ server.listen(port);
 function normalizePort(val) {
     const port = parseInt(val, 10);
     if (isNaN(port)) {
-      return val;
+        return val;
     }
     if (port >= 0) {
-      return port;
+        return port;
     }
     return false;
-  }
+}
 
-  server.on("listening", () => {    
+server.on("listening", () => {
     console.log(`server is listening for requests on port ${server.address().port}`);
-  });
+});
 
 
 // app.listen(3000, () => console.log('listening on port 3000!'));
@@ -38,7 +38,6 @@ app.use(express.json({ limit: '1mb' }));
 app.get('/tv/popular', async(req, res) => {
     const tvPopularUrl = `${base}/tv/popular?api_key=${process.env.API_KEY}`
     const popularShowsResponse = await fetch(tvPopularUrl);
-    console.log(popularShowsResponse)
     const popularShowsJSON = await popularShowsResponse.json();
     res.json(popularShowsJSON);
 });

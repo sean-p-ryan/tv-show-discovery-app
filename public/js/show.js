@@ -4,14 +4,15 @@ var showInfoText = {
     firstAir: "September 3, 2019"
 }
 
-const getShowData = async () => {
+const getShowData = async() => {
     const url = window.location.href;
     const paramArray = url.split("/");
     const showId = parseInt(paramArray[paramArray.length - 1].toString());
     await fetch(`/show/data/${showId}`)
         .then(response => response.json())
-        .then(data => {     
-            updateShowInfoText(data)               
+        .then(data => {
+            console.log(data)
+            updateShowInfoText(data)
         })
         .catch(err => console.log(err))
 }
@@ -23,7 +24,7 @@ const updateShowInfoText = (data) => {
     addMarkup()
 }
 
-const addMarkup = () => {    
+const addMarkup = () => {
     var markup = `
     <h1 class="show-title">${showInfoText.title}</h1>
     <p>${showInfoText.description}</p>
@@ -32,5 +33,4 @@ const addMarkup = () => {
     document.body.innerHTML = markup;
 }
 
-getShowData();  
-
+getShowData();
