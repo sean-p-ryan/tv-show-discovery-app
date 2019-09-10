@@ -1,13 +1,18 @@
-**Try it out**
-Hosted on Heroku at: https://aqueous-spire-38692.herokuapp.com/
+# TV Show Database
 
-**Overview**
 This app uses the open-source Movie Database API to allow a user to search and learn about thousands of popular television shows. The homepage of the app displays 20 of the most popular shows of all time, along with a search bar that can be used to browse for additional show data.
 
-**Local Setup**
-To run the application locally, you can clone this repository, run `npm install` to install dependencies, then run `npm start` to start a local server on localhost:3000. Navigate to localhost:3000 in any browser to view the application in a local setup. 
+Hosted on Heroku at: https://aqueous-spire-38692.herokuapp.com/
 
-**Server**
+## Getting Started
+
+### Prerequisites
+Be sure to have Node.js and Git installed on your machine. 
+
+### Installing
+After cloning into a local copy of the repo, run `npm install` to install dependencies, then `npm start` to start a local server on localhost:3000. Navigate to localhost:3000 in any browser to view the application in a local setup. 
+
+### Server
 I selected Express.js to power the back end of the application since it is well suited to handle each of its functional needs, including:  
 
 - Serving static files 
@@ -17,5 +22,5 @@ I selected Express.js to power the back end of the application since it is well 
 - Setting up a local server for development and testing
 - Server port management for local and production environments
 
-**Testing**
+### Testing
 A Jasmine test suite for all server endpoints is in `./spec/static_spec.js`. `npm test` will run tests. 
