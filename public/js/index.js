@@ -16,7 +16,6 @@ const getShowNames = (shows) => {
 };
 
 const addShowsToMarkup = (shows) => {
-    console.log('in addShowsToMarkup')
     let showResult = document.createElement('ul');
     shows.forEach(show => {
         let showName = show.original_name;
@@ -30,14 +29,14 @@ const addShowsToMarkup = (shows) => {
 }
 
 const addSearchResultsToMarkup = (shows) => {
-    console.log('in addShowsToMarkup')    
+    console.log('in addShowsToMarkup')
     shows.forEach(show => {
         const showName = show.original_name;
         const newShow = document.createElement('li');
         const showIdLink = document.createElement('a');
         showIdLink.innerText = showName;
         showIdLink.href = `/tv/${show.id}`;
-        newShow.appendChild(showIdLink);      
+        newShow.appendChild(showIdLink);
         showSearchArea.appendChild(newShow)
     })
 }

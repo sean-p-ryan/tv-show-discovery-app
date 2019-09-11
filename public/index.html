@@ -6,34 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Content-Security-Policy" />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
     <title>TV Show Database</title>
 
 </head>
 
 <body>
     <div class="main-container">
-    
-    <!-- <div class="container"> -->
 
-        <h1 class="main-heading">Welcome to the TV show database app!</h1>
-        <div class="show-search">
-            <form onsubmit="searchShow(e); return false">
-                <label for="tvShowSearch">Search for a show: </label>
-                <input type="text" id="tvShowSearch" placeholder="Show name">
-                <button type="search" id="searchButton">Search</button>
-            </form>
-        </div>        
-        <!-- <img src="./assets/images/homepage_background_image.jpg" alt="1950s family watching television" class="homepage-image"> -->
-        <div class="image-container"></div>
-        <div class="popular-shows-table">
-            <h1>Top 20 shows of all time: </h1>
-            <ol class="popular-shows-list">
-            </ol>
+        <h1 class="main-heading">ITDB</h1>
+        <h3 class="subtitle">Internet television database</h3>
+        <div class="search-and-shows-container">
+            <div class="show-search">
+                <form onsubmit="searchShow(e); return false">
+                    <label for="tvShowSearch">Search for a show: </label>
+                    <input type="text" id="tvShowSearch" placeholder="Game of Thrones">
+                    <button type="search" id="searchButton">Search</button>
+                </form>
+            </div>
+            <div class="image-container"></div>
+            <div class="popular-shows-table">
+                <h3>Select popular shows:</h3>
+                <ul class="popular-shows-list">
+                </ul>
+            </div>
         </div>
-    <!-- </div> -->
-</div>
-    
+        <!-- </div> -->
+    </div>
+
     <script src="js/index.js"></script>
 </body>
 
