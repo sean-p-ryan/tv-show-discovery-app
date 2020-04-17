@@ -13,7 +13,7 @@ Be sure to have Node.js and Git installed on your machine.
 After cloning into a local copy of the repo, run `npm install` to install dependencies, then `npm start` to start a local server on localhost:3000. Navigate to localhost:3000 in any browser to view the application in a local setup. 
 
 ### Server
-I selected Express.js to power the back end of the application since it is well suited to handle each of its functional needs, including:  
+Express.js handles: 
 
 - Serving static files 
 - Handling client-side HTTP requests 
